@@ -54,16 +54,25 @@ public class Socket : MonoBehaviour
             {
                 // rb.useGravity = false;
                 rb.isKinematic = true;
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+            }
+
+            Rigidbody parentRb = parentTransform.GetComponent<Rigidbody>();
+            if (parentRb != null)
+            {
+                parentRb.linearVelocity = Vector3.zero;
+                parentRb.angularVelocity = Vector3.zero;
             }
 
             // Log the snap action
             // Debug.Log($"{other.name} snapped into socket {name}, with size preserved.");
 
-            // Re-enable the grab system after the object has been snapped
-            if (grabInteractable != null)
-            {
-                grabInteractable.enabled = true;
-            }
+            // // Re-enable the grab system after the object has been snapped
+            // if (grabInteractable != null)
+            // {
+            //     grabInteractable.enabled = true;
+            // }
         }
     }
 }

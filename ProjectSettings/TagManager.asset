@@ -4,8 +4,18 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Motherboard
+  - MBD
   - RAM
+  - GPU
+  - FAN
+  - AIO
+  - HDD
+  - PSU
+  - CaseBottom
+  - CaseFront
+  - CaseSide
+  - CaseTop
+  - CasePCI-E
   layers:
   - Default
   - TransparentFX
