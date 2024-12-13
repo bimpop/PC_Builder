@@ -1,4 +1,5 @@
 using Oculus.Interaction;
+using Oculus.Interaction.HandGrab;
 using UnityEngine;
 
 public class Socket : MonoBehaviour
@@ -17,9 +18,16 @@ public class Socket : MonoBehaviour
         {
             // Temporarily disable the grab script or interaction (this will depend on how the grab system is set up)
             GrabInteractable grabInteractable = other.GetComponent<GrabInteractable>();
+            HandGrabInteractable handGrabInteractable = other.GetComponent<HandGrabInteractable>();
+            
             if (grabInteractable != null)
             {
                 grabInteractable.enabled = false; // Disable grabbing
+            }
+
+            if (handGrabInteractable != null)
+            {
+                handGrabInteractable.enabled = false;
             }
 
             if (meshRenderer != null)
@@ -72,6 +80,10 @@ public class Socket : MonoBehaviour
             // if (grabInteractable != null)
             // {
             //     grabInteractable.enabled = true;
+            // }
+            // if (handGrabInteractable != null)
+            // {
+            //     handGrabInteractable.enabled = true;
             // }
         }
     }
